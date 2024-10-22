@@ -1,6 +1,7 @@
 /*Base*/
 * {
   box-sizing: border-box;
+  font-family: Open Sans;
 }
 body {
 	background-color: #2e2f2f;
@@ -112,12 +113,12 @@ header {
   top: 0;
   margin: 0;
   padding: 50px;
-  padding-top: 10vh
+  padding-top: 10vh;
   padding-bottom: 0px;
   height: 100vh;
   width: 250px;
   
-  background: #293332;
+  background: #292c33;
   list-style-type: none;
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
@@ -161,3 +162,18 @@ footer {
 	justify-content: space-between;
 }
 
+/* Extra Small Devices, Phones 
+@media only screen and (min-width : 480px) {
+
+}
+
+Small Devices, Tablets
+@media only screen and (min-width : 768px) {
+
+}
+
+Medium Devices, Desktops
+@media only screen and (min-width : 992px) {
+
+}
+*/
