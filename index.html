@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Test html</title>
+	<title>Aspects of Mire Wiki - Home</title>
 	<meta name="keywords" content="aspects of mire, minecraft clone, voxel engine, voxel game">
 	<meta name="description" content="Official Wiki for Aspects of Mire project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,26 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+	
+	<!--MathJax-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ['input/AsciiMath'],
+			extensions: ['asciimath2jax.js'],
+			tex2jax: {
+				inlineMath: [["$","$"],["\\(","\\)"]],
+				displayMath: [['$$','$$'], ["\\[","\\]"]]
+			},
+			asciimath2jax: {
+				delimiters: [['\\$','\\$'], ['`','`']]
+			}
+		});
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+	
+	
 	<link href="web.css" rel="stylesheet">
+	<link href="css/home.css" rel="stylesheet">
 </head>
 
 
@@ -35,44 +53,101 @@
 		<span></span>
 
 		<ul class="header-menu-list">
-			<a href=""><li>Home</li></a>
+			<a href="index.html"><li>Home</li></a>
 			<a href=""><li>Source</li></a>
 			<a href=""><li>Tutorials</li></a>
 			<a href=""><li>Lore</li></a>
-			<a href=""><li>Environment</li></a>
-			<a href=""><li>Mobs</li></a>
-			<a href=""><li>Blocks</li></a>
-			<a href=""><li>Items</li></a>
-			<a href=""><li>Mechanics</li></a>
-			<a href=""><li>Crafting</li></a>
+			<a href=""><li>Gallery</li></a>
+			<a href=""><li>Videos</li></a>
+			<a href=""><li>Blog</li></a>
+			<a href=""><li>All pages</li></a>
+			<a href=""><li>Versions</li></a>
+			<a href=""><li>Wiki</li></a>
 		</ul>
 	</div>
 </header>
 <!--Article-->
-<article>Article
-<p>Exteremely long and unnecessary meaningless text, only ain of which is to show where the texting space ends ob the page width.</p>
-</article>
+<article class="nonav">
 
-<nav>
-	<h3>Contents</h4>
-	<ol>
-		<a href=""><li>Home</li></a>
-		<a href=""><li>Source</li></a>
-		<a href=""><li>Tutorials</li></a>
-		<a href=""><li>Lololo<ol>
-			<a href=""><li>Lore</li></a>
-			<a href=""><li>Environment lololololololo</li></a>
-			<a href=""><li>Mobs</li></a>
-			<a href=""><li>Blocks</li></a>
-			<a href=""><li>Items</li></a>
-		</ol></li></a>
-		<a href=""><li>Mechanics</li></a>
-		<a href=""><li>Recipes</li></a>
-	</ol>
-</nav>
+	<div id="welcome"><h1>Welcome to Aspects of Mire Wiki</h1></div>
+	
+	<div id="description">
+		<div id="top">
+			<div id="about">
+				<div>About</div>
+				<p>Aspects of Mire is a sandbox voxel game written with C and Raylib. It add a whole new world with lore, survival, mechanics, <span id="cref">story</span> and <span id="cref">music</span>. Dive into the hostile but beatiful world and start your journey in the lands of mire.</p>
+				<p>The game is currently under development so make sure to check new versions and veatures on this wiki. If you want to report bugs or suggest a feature - raise an issue on GitHub repository of the project (here).</p>
+				<p><span style="color: red;">WARNING!</span> - Some versions may be incompatible with previous releases because of changes in core structure. Always read CHANGELOG to know if it is possible to port your older worlds to the newer version. Sometimes convertion apps are released for world update, but it't not a consistent occasion (may never happen at all) and generally not a good idea.</p>
+			</div>
+			<div id="versions">
+				<div id="versions-header">Versions</div>
+				<h4>Latest release</h4>
+				<p><a href="">[ra.0.0-AoM-name_of_the_version]</a></p>
+				<h4>Latest snapshot</h4>
+				<p><a href="">[sa.0.0-AoM-name_of_the_snapshot]</a></p>
+				<div id="versions-links">
+					<a id="" href="">All versions</a>
+					<a id="" href="">How to read file titles</a>
+				</div>
+			</div>
+		</div>
+		<div id="bottom">
+			<div id="tutorials">
+				<div>Tutorials</div>
+				<p>
+				Some basic tutorials player may find useful at start. It's highly recommended to read only this section ignoring the rest of the wiki if you want to get the most of the experience.
+				</p>
+				<ul>
+					<li><a href="">How to install the game</a></li>
+					<li><a href="">Movement and GUI</a></li>
+					<li><a href="">Finding first shelter</a></li>
+					<li><a href="">Gathering resources</a></li>
+					<li><a href="">Refilling basic vitals</a></li>
+					<li><a href="">Tips about food</a></li>
+					<li><a href="">Simple crafting</a></li>
+					<li><a href="">Beware of dangers</a></li>
+					<li><a href="">What's next</a></li>
+				</ul>
+			</div>
+			<div id="content">
+				<div>Content</div>
+				<a href="">All articles</a>
+				<ul>
+					<li><a href="">Biomes</a></li>
+					<li><a href="">Magic</a></li>
+					<li><a href="">Items</a></li>
+					<li><a href="">Mobs</a></li>
+					<li><a href="">Structures</a></li>
+					<li><a href="">Crafting</a></li>
+					<li><a href="">Bosses</a></li>
+				</ul>
+				<a href="">All documentation</a>
+				<ul>
+					<li><a href="">Client</a></li>
+					<li><a href="">Server</a></li>
+					<li><a href="">World data</a></li>
+					<li><a href="">Loot tables</a></li>
+				</ul>
+			</div>
+			<div id="more">
+				<div>More</div>
+				<p>I dunno what to write here. I'll leave this field empty for now, maybe I'll add something in the future.</p>
+				<p>Lorem ipsum dolor sit amet... am I spelling this right?</p>
+				<p>Fun fact: crimson highlighted links mean that I forgot to put the link adress... Alright, I confess - actually that means I haven't written articles for them yet.</p>
+				<p>Wait, what if this game is a one giant reference to <a href="https://github.com/Angry-Pixel/The-Betweenlands" target="_blank" style="margin: 0;">The Betweenlands</a>? Nah, no way it is...</p>
+				<p>Did you know why these three blocks are a few pixels smaller than upper two blocks? That's because `(100%)/3!=33.(3)%`, but only `33%`.</p>
+			</div>
+		</div>	
+	</div>
+	
+	
+</article>
 <!--Footer-->
 <footer>
-	<a class="header-logo" href="index.html">Aspects of Mire WIKI</a>
+	<div class="footer-info">
+		<a class="header-logo" href="index.html">Aspects of Mire WIKI</a>
+		<p>Web documentation</p>
+	</div>
 </footer>
 
 </body>
