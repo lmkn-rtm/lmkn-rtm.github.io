@@ -1,0 +1,172 @@
+/* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+c&plugins=line-numbers+highlight-keywords+toolbar+copy-to-clipboard */
+.token.comment {
+	color: #808080;
+}
+.token.constant {
+	color: #c4c4c4;
+}
+.token.variable {
+	color: #ffffff;
+}
+.token.punctuation,
+.token.operator {
+	color: #b38a4f;
+}
+.token.macro {
+	color: #c60018;
+}
+.token.number,
+.token.string,
+.token.char {
+	color: #f9c73c;
+}
+.token.function {
+	color: #f8f889;
+}
+.token.control {
+	color: #3baaff;
+}
+.token.class-name,
+.token.keyword {
+	color: #88d18a;
+}
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3em;
+    counter-reset: linenumber;
+}
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.4em;
+    width: 3em;
+    letter-spacing: -1px;
+    /* border-right: 1px solid #999; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+}
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #3c3c3c;
+    display: block;
+    padding-right: 0.5em;
+    text-align: right;
+}
+
+
+
+div.code-toolbar {
+    position: relative;
+}
+div.code-toolbar > .toolbar {
+    position: absolute;
+    z-index: 10;
+    top: 0em;
+    right: 0em;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+div.code-toolbar:hover > .toolbar {
+    opacity: 1;
+}
+div.code-toolbar:focus-within > .toolbar {
+    opacity: 1;
+}
+div.code-toolbar > .toolbar > .toolbar-item {
+    display: inline-block;
+}
+div.code-toolbar > .toolbar > .toolbar-item > a {
+    cursor: pointer;
+}
+div.code-toolbar > .toolbar > .toolbar-item > button {
+    background: 0 0;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+    color: #bbb;
+    font-size: 1em;
+    padding: 0 0.5em;
+    background: #f5f2f0;
+    background: rgba(224, 224, 224, 0.2);
+    border-radius: 0.4em;
+	padding: 0.2em 0.4em 0.2em 0.4em;
+}
+div.code-toolbar > .toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar > .toolbar-item > button:focus,
+div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar > .toolbar-item > span:focus,
+div.code-toolbar > .toolbar > .toolbar-item > span:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #f8f8f2;
+    background: 0 0;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Consolas, Courier New, monospace;
+    font-size: 1.08em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 0;
+    overflow: auto;
+    border-radius: 0.4em;
+}
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: #141414;
+}
+:not(pre) > code[class*="language-"] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+    white-space: normal;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aspects of Mire Wiki - Home</title>
+	<meta name="keywords" content="aspects of mire, minecraft clone, voxel engine, voxel game">
+	<meta name="description" content="Official Wiki for Aspects of Mire project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--Oswald font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<!--Roboto font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<!--Open Sans font-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	
+	<!--MathJax-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			jax: ['input/AsciiMath'],
+			extensions: ['asciimath2jax.js'],
+			tex2jax: {
+				inlineMath: [["$","$"],["\\(","\\)"]],
+				displayMath: [['$$','$$'], ["\\[","\\]"]]
+			},
+			asciimath2jax: {
+				delimiters: [['\\$','\\$'], ['`','`']]
+			}
+		});
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+		
+	<link href="../web.css" rel="stylesheet">
+	<link href="source-article-template.css" rel="stylesheet">
+	
+	<!--Prism code highlighting-->
+	<link href="../css/prism.css" rel="stylesheet" />
+</head>
+
+
+<body id="intro">
+<!--Header-->
+<header>
+	<a class="header-logo" href="index.html">Aspects of Mire WIKI</a>
+	<div class="header-menu">
+		<input type="checkbox"/>
+
+		<span></span>
+		<span></span>
+		<span></span>
+
+		<ul class="header-menu-list">
+			<a href="index.html"><li>Home</li></a>
+			<a href=""><li>Source</li></a>
+			<a href=""><li>Tutorials</li></a>
+			<a href=""><li>Lore</li></a>
+			<a href=""><li>Gallery</li></a>
+			<a href=""><li>Videos</li></a>
+			<a href=""><li>Blog</li></a>
+			<a href=""><li>All pages</li></a>
+			<a href=""><li>Versions</li></a>
+			<a href=""><li>Wiki</li></a>
+		</ul>
+	</div>
+</header>
+<!--Article-->
+<div class="main">
+
+<nav>
+	<h3>Contents</h4>
+	<ol>
+		<li><a href="#intro">Intro</a></li>
+		<li><a href="">Codeblock</a></li>
+		<li><a href="">Image</a><ol>
+			<li><a href="">Gallery scroll</a></li>
+		</ol></li>
+		<li><a href="">Equation field</a></li>
+		<li><a href="">Table</a><ol>
+			<li><a href="">Expandable table</a></li>
+		</ol></li>
+		<li><a href="">Video</a></li>
+	</ol>
+</nav>
+
+<article class="language-c line-numbers">
+	<h1>Source article template</h1>
+	<p>This article is an example of source code documentation articles with all possibly needed structures to provide informative and clean design to readers. I suppose the following elemnts are the most coherent in this type of pages: codeblock, image (image gallery scroll), equation field, table (expandable) and video. I also wonder if i should add right sidebar (i guess empty with darker background or unscrollable image so text doesn't look to widened on pc and tablets... I should definetely consider this issue.</p>
+	
+	<pre><code data-prismjs-copy="Copy code">
+	#include &lt;stdio.h&gt;
+	
+	static char * str = "Hello C!";
+	
+	int main(void)
+	{
+		printf("%s", str);
+		return 0;
+	}
+	</code></pre>
+
+</article>
+
+<div class="sidebar">
+</div>
+
+</div>
+<!--Footer-->
+<footer>
+	<div class="footer-info">
+		<a class="header-logo" href="index.html">Aspects of Mire WIKI</a>
+		<p>Web documentation</p>
+	</div>
+</footer>
+
+<script src="../prism.js"></script>
+</body>
+</html>
