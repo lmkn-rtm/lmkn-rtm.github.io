@@ -1,0 +1,145 @@
+#welcome {
+	display: flex;
+	justify-content: center;
+}
+
+
+#description {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: 2em 6vw 2em 6vw;
+	min-width: 280px;
+}
+#top {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+	#about {
+		width: 100%;
+		border: 2px solid #444b5c;
+		margin: 0vw 0.1vw 0.2vw 0vw;
+	}
+	#about div {
+		justify-content: center;
+		align-items: center;
+		background-color: #444b5c;
+		display: flex;
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+		font-size: 120%;
+		font-weight: bold;
+		height: 2em;
+	}
+	#about p {
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+		padding-bottom: 0.5em;
+	}
+	#versions {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		border: 2px solid #444b5c;
+		margin: 0vw 0vw 0.2vw 0.1vw;
+	}
+	#versions-header {
+		justify-content: center;
+		align-items: center;
+		background-color: #444b5c;
+		display: flex;
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+		font-size: 120%;
+		font-weight: bold;
+		height: 2em;
+	}
+	#versions * {
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+	}
+	#versions p {
+		padding: 0.1em 0em 2em 0em;
+	}
+	#versions-links {
+		display: flex;
+		flex-direction: row;
+		margin-top: auto;
+	}
+#bottom {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+	#tutorials {
+		border: 2px solid #444b5c;
+		margin: 0vw 0.1vw 0.2vw 0vw;
+		width: 100%;
+	}
+	#tutorials div {
+		justify-content: center;
+		align-items: center;
+		background-color: #444b5c;
+		display: flex;
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+		font-size: 120%;
+		font-weight: bold;
+		height: 2em;
+	}
+	#tutorials p {
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+	}
+	#content {
+		border: 2px solid #444b5c;
+		margin: 0vw 0.1vw 0.2vw 0.1vw;
+		width: 100%;
+	}
+	#content div {
+		justify-content: center;
+		align-items: center;
+		background-color: #444b5c;
+		display: flex;
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+		font-size: 120%;
+		font-weight: bold;
+		height: 2em;
+	}
+	#content p {
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+	}
+	#more {
+		border: 2px solid #444b5c;
+		margin: 0vw 0vw 0.2vw 0.1vw;
+		width: 100%;
+	}
+	#more div {
+		justify-content: center;
+		align-items: center;
+		background-color: #444b5c;
+		display: flex;
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+		font-size: 120%;
+		font-weight: bold;
+		height: 2em;
+	}
+	#more p {
+		margin: 0.4vw 0.4vw 0.4vw 0.4vw;
+	}
+	
+
+@media only screen and (min-width : 720px) {
+	#about {
+		width: calc(60% - 0.1vw);
+	}
+	#versions {
+		width: calc(40% - 0.1vw);
+	}
+	#tutorials {
+		width: 33%;
+	}
+	#content {
+		width: 33%;
+	}
+	#more {
+		width: 33%;
+	}
+}

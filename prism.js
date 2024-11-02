@@ -357,12 +357,12 @@ Prism.languages.c = Prism.languages.extend("clike", {
 		greedy: !0
 	},
 	'class-name': {
-		pattern: /(\b(?:enum|struct)\s+(?:__attribute__\s*\(\([\s\S]*?\)\)\s*)?)\w+|\b[a-z]\w*_t\b/,
+		pattern: /(\b(?:enum|struct|union)\s+(?:__attribute__\s*\(\([\s\S]*?\)\)\s*)?)\w+|\b[a-z]\w*_t\b/,
 		lookbehind: !0
 	},
 	'function': /\b[a-z_]\w*(?=\s*\()/i,
 	'keyword': /\b(?:_Alignas|_Alignof|_Atomic|_Bool|_Complex|_Generic|_Imaginary|_Noreturn|_Static_assert|_Thread_local|__attribute__|asm|auto|const|double|float|int|short|struct|unsigned|long|signed|void|enum|register|volatile|char|extern|static|union|_Static_assert|FILE|size_t|bool|pthread_t|Vector2|Vector3|Vector4|Quaternion|Matrix|Color|Rectangle|Image|Texture|Texture2D|RenderTexture|RenderTexture2D|TextureCubemap|NPatchInfo|GlyphInfo|Font|Camera|Camera3D|Camera2D|Mesh|Shader|MaterialMap|Material|Transform|BoneInfo|Model|ModelAnimation|Ray|RayCollision|BoundingBox|Wave|Sound|Music|AudioStream|VrDeviceInfo|VrStereoConfig|FilePathList|AutomationEvent|AutomationEventList|rlVertexBuffer|rlDrawCall|rlRenderBatch|int8_t|int16_t|int32_t|int64_t|intptr_t|uint8_t|uint16_t|uint32_t|uint64_t|uintptr_t|atomic_bool|atomic_int)\b/,
-	'number': /(?:\b0x(?:[\da-f]+(?:\.[\da-f]*)?|\.[\da-f]+)(?:p[+-]?\d+)?|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?)[ful]{0,4}/i,
+	'number': /(?:\b(?:0b|0x)(?:[\da-f]+(?:\.[\da-f]*)?|\.[\da-f]+)(?:p[+-]?\d+)?|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?)[ful]{0,4}/i,
 	'operator': />>=?|<<=?|->|([-+&|:])\1|[?:~]|[-+*/%&|^!=<>]=?/
 }), Prism.languages.insertBefore("c", "string", {
 	'char': {

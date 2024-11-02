@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Aspects of Mire Wiki - Home</title>
-	<meta name="keywords" content="aspects of mire, minecraft clone, voxel engine, voxel game">
+	<title>AoM Wiki - Home</title>
+	<meta name="keywords" content="aspects of mire, voxel engine, voxel game">
 	<meta name="description" content="Official Wiki for Aspects of Mire project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,7 +37,7 @@
 	
 	
 	<link href="web.css" rel="stylesheet">
-	<link href="css/home.css" rel="stylesheet">
+	<link href="home.css" rel="stylesheet">
 </head>
 
 
@@ -54,7 +54,7 @@
 
 		<ul class="header-menu-list">
 			<a href="index.html"><li>Home</li></a>
-			<a href=""><li>Source</li></a>
+			<a href="source-articles/source-main.html"><li>Documentation</li></a>
 			<a href=""><li>Tutorials</li></a>
 			<a href=""><li>Lore</li></a>
 			<a href=""><li>Gallery</li></a>
@@ -66,9 +66,13 @@
 		</ul>
 	</div>
 </header>
-<!--Article-->
-<article class="nonav">
-
+<!--Main-->
+<div class="main">
+<article>
+	<ul class="breadcrumb">
+		<li><a href="index.html">Home</a></li>
+	</ul>
+	
 	<div id="welcome"><h1>Welcome to Aspects of Mire Wiki</h1></div>
 	
 	<div id="description">
@@ -111,7 +115,7 @@
 			</div>
 			<div id="content">
 				<div>Content</div>
-				<a href="">All articles</a>
+				<p><a href="">All articles</a></p>
 				<ul>
 					<li><a href="">Biomes</a></li>
 					<li><a href="">Magic</a></li>
@@ -121,7 +125,7 @@
 					<li><a href="">Crafting</a></li>
 					<li><a href="">Bosses</a></li>
 				</ul>
-				<a href="">All documentation</a>
+				<p><a href="source-articles/source-main.html">All documentation</a></p>
 				<ul>
 					<li><a href="">Client</a></li>
 					<li><a href="">Server</a></li>
@@ -140,8 +144,11 @@
 		</div>	
 	</div>
 	
-	
+	<ul class="breadcrumb">
+		<li><a href="index.html">Home</a></li>
+	</ul>
 </article>
+</div>
 <!--Footer-->
 <footer>
 	<div class="footer-info">

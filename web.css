@@ -65,7 +65,7 @@ article {
 	display: flex;
 	flex-direction: column;
 	flex: auto;
-	padding: 1em;
+	padding: 0em 1em 0em 1em;
 }
 nav {
 	background-color: #292c33;
@@ -104,6 +104,20 @@ nav a:hover {
 .code-toolbar {
 	max-width: calc(100vw - 2em);
 	width: 100%;
+}
+.breadcrumb {
+	list-style: none;
+	margin: 0;
+	padding: 1em 0em 1em 0em;
+}
+.breadcrumb li {
+	display: inline;
+	font-size: 18px;
+}
+.breadcrumb li+li:before {
+	padding: 8px;
+	color: white;
+	content: "/\00a0";
 }
 
 /*Header*/

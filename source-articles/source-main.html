@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Aspects of Mire Wiki - Home</title>
-	<meta name="keywords" content="aspects of mire, minecraft clone, voxel engine, voxel game">
+	<title>AoM Wiki - All documentation</title>
+	<meta name="keywords" content="aspects of mire, source, voxel engine">
 	<meta name="description" content="Official Wiki for Aspects of Mire project">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,10 +43,10 @@
 </head>
 
 
-<body id="intro">
+<body id="top">
 <!--Header-->
 <header>
-	<a class="header-logo" href="index.html">Aspects of Mire WIKI</a>
+	<a class="header-logo" href="../index.html">Aspects of Mire WIKI</a>
 	<div class="header-menu">
 		<input type="checkbox"/>
 
@@ -55,8 +55,8 @@
 		<span></span>
 
 		<ul class="header-menu-list">
-			<a href="index.html"><li>Home</li></a>
-			<a href=""><li>Source</li></a>
+			<a href="../index.html"><li>Home</li></a>
+			<a href="source-main.html"><li>Documentation</li></a>
 			<a href=""><li>Tutorials</li></a>
 			<a href=""><li>Lore</li></a>
 			<a href=""><li>Gallery</li></a>
@@ -68,51 +68,55 @@
 		</ul>
 	</div>
 </header>
-<!--Article-->
+<!--Main-->
 <div class="main">
-
+<!--Navigation (left panel)-->
 <nav>
 	<h3>Contents</h4>
 	<ol>
-		<li><a href="#intro">Intro</a></li>
-		<li><a href="">Codeblock</a></li>
-		<li><a href="">Image</a><ol>
-			<li><a href="">Gallery scroll</a></li>
-		</ol></li>
-		<li><a href="">Equation field</a></li>
-		<li><a href="">Table</a><ol>
-			<li><a href="">Expandable table</a></li>
-		</ol></li>
-		<li><a href="">Video</a></li>
+		<li><a href="#top">Intro</a></li>
+		<li><a href="">Server</a></li>
+		<li><a href="">Client</a></li>
 	</ol>
 </nav>
 
-<article class="language-c line-numbers">
-	<h1>Source article template</h1>
-	<p>This article is an example of source code documentation articles with all possibly needed structures to provide informative and clean design to readers. I suppose the following elemnts are the most coherent in this type of pages: codeblock, image (image gallery scroll), equation field, table (expandable) and video. I also wonder if i should add right sidebar (i guess empty with darker background or unscrollable image so text doesn't look to widened on pc and tablets... I should definetely consider this issue.</p>
+<!--Article (center panel)-->
+<article class="language-c line-numbers" data-prismjs-copy="Copy code">
+	<ul class="breadcrumb">
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="source-main.html">All documentation</a></li>
+	</ul>
 	
-	<pre><code data-prismjs-copy="Copy code">
-	#include &lt;stdio.h&gt;
+	<h1>All documentation</h1>
 	
-	static char * str = "Hello C!";
+	<h3>Server</h3>
+	<ul>
+		<li><a href="chunk-structure.html">Chunk structure</a></li>
+		<li><a href="">Block data</a></li>
+		<li><a href="">Building chunks</a></li>
+		<li><a href="">-</a></li>
+		<li><a href="">-</a></li>
+		<li><a href="">-</a></li>
+	</ul>
+	<h3>Client</h3>
+	<ul>
+		<li><a href="">-</a></li>
+	</ul>
 	
-	int main(void)
-	{
-		printf("%s", str);
-		return 0;
-	}
-	</code></pre>
-
+	<ul class="breadcrumb">
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="source-main.html">All documentation</a></li>
+	</ul>
 </article>
 
+<!--Sidebar (right panel)-->
 <div class="sidebar">
 </div>
-
 </div>
 <!--Footer-->
 <footer>
 	<div class="footer-info">
-		<a class="header-logo" href="index.html">Aspects of Mire WIKI</a>
+		<a class="header-logo" href="../index.html">Aspects of Mire WIKI</a>
 		<p>Web documentation</p>
 	</div>
 </footer>
