@@ -50,16 +50,20 @@ ol ol {
 }
 p {
 	font-family: Open Sans, Verdana;
+	margin-top: 0;
 }
 div {
 	font-family: Open Sans, Verdana;
 }
-
+img {
+	width: 100%;
+	height: auto;
+}
 /*Main part*/
 .main {
 	display: flex;
-	flex-direction: row;
-	margin-top: max(4em, 50px);
+	flex-direction: column;
+	flex: auto;
 }
 article {
 	display: flex;
@@ -69,16 +73,13 @@ article {
 }
 nav {
 	background-color: #292c33;
-	position: sticky; 
 	flex: 0;
 	top: max(4em, 50px);
-	width: 220px;
-	height: calc(100vh - 4em);
-	overflow-x: hidden;
-	overflow-y: auto;
-	padding: 0em;
+	width: 100%;
+	height: auto;
+	padding: 1em;
+	padding-bottom: 0;
 	z-index: 5;
-	visibility: hidden;
 }
 nav a {
 	text-decoration: none;
@@ -88,8 +89,18 @@ nav a:hover {
 	text-decoration: underline;
 	color: lightgray !important;
 }
-.sidebar {
-	background-color: #292c33;
+.rsidebar {
+	background-color: #2e2f2f;
+	position: sticky; 
+	top: max(4em, 50px);
+	width: 220px;
+	height: calc(100vh - 4em);
+	z-index: 5;
+	flex: 0;
+	visibility: hidden;
+}
+.lsidebar {
+	background-color: #2e2f2f;
 	position: sticky; 
 	top: max(4em, 50px);
 	width: 220px;
@@ -105,19 +116,38 @@ nav a:hover {
 	max-width: calc(100vw - 2em);
 	width: 100%;
 }
-.breadcrumb {
+.ubreadcrumb {
 	list-style: none;
 	margin: 0;
-	padding: 1em 0em 1em 0em;
+	margin-top: max(4em, 50px);
+	padding: 1em 1em 1em 1em;
+	background-color: #292c33;
 }
-.breadcrumb li {
+.dbreadcrumb {
+	list-style: none;
+	margin: 0;
+	padding: 1em 1em 1em 1em;
+	background-color: #292c33;
+}
+.ubreadcrumb li {
 	display: inline;
 	font-size: 18px;
+	font-family: Consolas;
 }
-.breadcrumb li+li:before {
+.ubreadcrumb li+li:before {
 	padding: 8px;
 	color: white;
-	content: "/\00a0";
+	content: ">\00a0";
+}
+.dbreadcrumb li {
+	display: inline;
+	font-size: 18px;
+	font-family: Consolas;
+}
+.dbreadcrumb li+li:before {
+	padding: 8px;
+	color: white;
+	content: ">\00a0";
 }
 
 /*Header*/
@@ -268,6 +298,11 @@ footer {
 		visibility: visible;
 		flex: none;
 		padding: 1em;
+		width: 220px;
+		height: calc(100vh - 4em);
+		overflow-x: hidden;
+		overflow-y: auto;
+		position: sticky;
 	}
 	footer {
 		display: flex;
@@ -276,9 +311,19 @@ footer {
 	}
 }
 @media only screen and (min-width : 1280px) {
-	.sidebar {
+	.main {
+		flex-direction: row;
+		flex: auto;
+	}
+	.lsidebar {
 		visibility: visible;
 		flex: none;
+		height: auto;
+	}
+	.rsidebar {
+		visibility: visible;
+		flex: none;
+		height: auto;
 	}
 }
 
