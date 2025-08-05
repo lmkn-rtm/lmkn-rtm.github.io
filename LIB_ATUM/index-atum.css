@@ -1,0 +1,46 @@
+/* index-atum.css - Updated with table overflow fix */
+.doc-section {
+    margin-bottom: 3rem;
+}
+
+.doc-section h2 {
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Table Container */
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Tables */
+.deps-table {
+    width: 100%;
+    min-width: 600px; /* Minimum width before scrolling */
+    border-collapse: collapse;
+}
+
+.deps-table th, 
+.deps-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.deps-table th {
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(0,0,0,0.1);
+}
+
+.deps-table tr:last-child td {
+    border-bottom: none;
+}
+
+li p {
+    margin-bottom: 0;
+}

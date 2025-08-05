@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atum Documentation</title>
+    <meta name="description" content="Atum Library Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Styles -->
+    <link href="../web.css" rel="stylesheet">
+    <link href="index-atum.css" rel="stylesheet">
+    
+    <!-- Codeblock -->
+    <link rel="stylesheet" href="../codeblock.css">
+</head>
+<body>
+    <!-- Top Breadcrumb -->
+    <nav class="breadcrumb-top">
+        <a href="../index.html">Home</a> / <span>Atum</span>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Atum Library</h1>
+        <div class="header-links">
+            <a href="#">Changelog</a>
+            <span class="separator">|</span>
+            <a href="#">Latest Release</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content language-c">
+        <!-- Overview Section -->
+        <section class="doc-section">
+            <h2>Overview</h2>
+            <p>Atum is a meta-library combining multiple specialized libraries under a unified interface for wide range of utilities
+            for windows desktop application development. All external libraries were compiled (or extracted from archive) to object files and
+            included in libatum.a to specify less flags during linking. No changes to external libraries were made (unless specified explicitly)
+            and all licenses can be found in respective folders at <code>"./src/external/"</code>.</p>
+        </section>
+
+        <!-- Modules Grid -->
+        <section class="doc-section">
+            <h2>Core Modules</h2>
+            <div class="card-grid">
+                <a href="#" class="card">
+                    <h3>atum.h</h3>
+                    <p>Header that includes headers of all modules for you</p>
+                </a>
+                <a href="#" class="card">
+                    <h3>config.h</h3>
+                    <p>Contains macros for configuring lib (rebuild the lib if you want to apply changes)</p>
+                </a>
+                <a href="#" class="card">
+                    <h3>atim_utils.h</h3>
+                    <p>Contains utility functions, logging, basic types and macros</p>
+                </a>
+                <a href="#" class="card">
+                    <h3>atum_data.h</h3>
+                    <p>Contains data structures, algorithms, threading and some math</p>
+                </a>
+                <a href="#" class="card">
+                    <h3>atum_io.h</h3>
+                    <p>Contains functions for working with directories, some system data and json files</p>
+                </a>
+                <a href="#" class="card">
+                    <h3>atum_core.h</h3>
+                    <p>Contains window utilities; core module for graphical applications</p>
+                </a>
+                <a href="#" class="card">
+                    <h3>Comig soon</h3>
+                    <p>In future updates</p>
+                </a>
+                <!-- Add more modules as needed -->
+            </div>
+        </section>
+
+        <!-- Dependencies -->
+        <section class="doc-section">
+            <h2>Dependencies</h2>
+            <div class="table-container">
+                <table class="deps-table">
+                    <tr>
+                        <th>Library</th>
+                        <th>Version</th>
+                        <th>License</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/glfw/glfw" target="_blank">GLFW</a></td>
+                        <td>3.3+</td>
+                        <td>Zlib</td>
+                        <td>Window management</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://glad.dav1d.de" target="_blank">GLAD</a></td>
+                        <td>0.1.36</td>
+                        <td>MIT</td>
+                        <td>OpenGL management</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/kgabis/parson" target="_blank">Parson</a></td>
+                        <td>1.5.3</td>
+                        <td>MIT</td>
+                        <td>JSON parsing and serialization</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/raysan5/raylib/blob/master/src/raymath.h" target="_blank">Raymath</a></td>
+                        <td>v2.0</td>
+                        <td>Zlib</td>
+                        <td>Vector, matrix and other math</td>
+                    </tr>
+                    <!-- Add more rows -->
+                </table>
+            </div>
+        </section>
+
+        <!-- Installation -->
+        <section class="doc-section">
+            <h2>Installation</h2>
+            <ol class="install-steps">
+                <li>
+                    <strong>Download</strong>
+                    <p>Get the latest release from <a href="https://github.com/your-repo/atum/releases" target="_blank">GitHub Releases</a></p>
+                </li>
+                <li>
+                    <strong>Extract</strong>
+                    <p>Unzip to your preferred location.</p>
+                </li>
+                <li>
+                    <strong>Build</strong>
+                    <p>If you want to recompile the library, open console in src directory and run make.</p>
+                </li>
+                <li>
+                    <strong>Link</strong>
+                    <p>Add these flags to you Makefile (or console, its just a reference):</p>
+                    <pre class="copy-code no-highlight line-numbers"><code>
+                    SET ATUM_PATH="where you put libatum folder"
+                    SET IPATH=-I$(ATUM_PATH)/src
+                    SET LPATH=-L$(ATUM_PATH)
+                    SET LFLAGS=-latum -lopengl32 -lgdi32
+                    </pre></code>
+                    <p><code>-I</code> specifies location of headers (in src there are both .h and .c files as well as Makefile to build it all.</p>
+                    <p><code>-L</code> specifies where libatum.a is - it's in libatum folder with README and LICENSE.txt</p>
+                    <p><code>-l</code> flags are used for lib linking, -lopengl32 and -lgdi32 are for stuff glfw uses, i cannot remove them by adding object files to libatum.a because these are dlls...</p>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <!-- Bottom Breadcrumb -->
+    <nav class="breadcrumb-bottom">
+        <a href="../index.html">Home</a> / <span>Atum</span>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Saigyou_</p>
+    </footer>
+
+<!-- Scripts -->
+<script src="../codeblock.js"></script>
+</body>
+</html>
