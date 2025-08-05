@@ -1,0 +1,154 @@
+/* Base styling */
+pre {
+  position: relative;
+  background: rgb(20, 20, 20);
+  border-radius: 4px;
+  padding: 1em;
+  overflow-x: auto;
+  color: #e0e0e0;
+  margin: 0;
+  tab-size: 4;
+}
+
+pre code {
+  display: block;
+  font-family: 'Noto Sans Mono', monospace;
+  white-space: pre;
+  padding-left: 0em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background: rgb(20, 20, 20);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Noto Sans Mono', monospace;
+  color: #e0e0e0;
+  line-height: normal;
+}
+
+/* Copy button */
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+pre:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.copy-icon-path {
+  fill: #e3e3e3;
+  transition: fill 0.2s;
+}
+
+.copy-btn:hover .copy-icon-path {
+  fill: #ffffff;
+}
+
+/* Line numbers */
+pre.line-numbers {
+  padding-left: 4.5em;
+}
+
+.line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0.8em;
+  left: 0.4em;
+  width: 2.3em;
+  font-family: 'Noto Sans Mono', monospace;
+  line-height: 1.5;
+  text-align: right;
+  user-select: none;
+}
+
+.line-numbers-rows span {
+  display: block;
+  color: #7a7a7a;
+  position: relative;
+}
+
+.line-numbers-rows span::after {
+  content: '';
+  position: absolute;
+  right: -0.5em;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #333;
+}
+
+
+
+
+
+
+
+
+/* Token styles */
+.token.keyword {
+  color: rgb(38,191,141);
+}
+
+.token.type {
+  color: rgb(70,230,146);
+}
+
+.token.comment {
+  color: rgb(127,127,127);
+  font-style: italic;
+}
+
+.token.string {
+  color: rgb(249,199,60);
+}
+
+.token.number {
+  color: rgb(249,199,60);
+}
+
+.token.macro {
+  color: rgb(218,33,33);
+}
+
+.token.flow {
+    color: rgb(179,138,79);
+}
+
+.token.constant {
+    color: rgb(196,196,196);
+}
+
+.token.function {
+    color: rgb(248,248,137);
+}
+
+.token.operator {
+  color: rgb(179,138,79);
+  font-weight: bold;
+}
+
+.token.punctuation {
+  color: rgb(179,138,79);
+  font-weight: bold;
+}
