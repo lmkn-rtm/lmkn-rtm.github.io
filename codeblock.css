@@ -45,6 +45,7 @@ pre code {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 pre:hover .copy-btn {
@@ -73,13 +74,14 @@ pre.line-numbers {
 .line-numbers-rows {
   position: absolute;
   pointer-events: none;
-  top: 0.8em;
+  top: 1em;
   left: 0.4em;
   width: 2.3em;
   font-family: 'Noto Sans Mono', monospace;
   line-height: 1.5;
   text-align: right;
   user-select: none;
+  z-index:1 ;
 }
 
 .line-numbers-rows span {
@@ -98,20 +100,69 @@ pre.line-numbers {
   background: #333;
 }
 
+.code-header-wrapper {
+  position: relative;
+  margin: 1em 0em 1em 0em
+}
+
+.code-header {
+  background: #252525;
+  border-radius: 4px 4px 0 0;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Noto Sans Mono', monospace;
+  font-size: 0.875em;
+  color: #a0a0a0;
+}
+
+.code-header .lang-name {
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+/* Update pre styling to remove top border radius when header is present */
+.code-header-wrapper pre {
+  border-radius: 0 0 4px 4px;
+  margin-top: 0;
+}
+
+/* Move copy button to header */
+.code-header .copy-btn {
+  position: static;
+  margin: 0;
+  transform: none;
+  top: auto;
+  right: auto;
+}
+
+/* Remove the old copy button positioning */
+.code-header-wrapper pre .copy-btn {
+  display: none;
+}
 
 
 
-
-
-
+/*
+red flow control + [true, false, null]- 230 70 70
+gray comment - 127 127 127
+cyan string - 29 189 159
+brown punctuation + braces - 179 138 79
+orange numbers - 249 199 60
+green mods - 86 194 130
+mint types - 136 209 138
+crimson macros - 191 38 38
+yellow functions - 248 248 137
+*/
 
 /* Token styles */
 .token.keyword {
-  color: rgb(38,191,141);
+  color: rgb(86,194,130);
 }
 
 .token.type {
-  color: rgb(70,230,146);
+  color: rgb(136,209,138);
 }
 
 .token.comment {
@@ -120,7 +171,7 @@ pre.line-numbers {
 }
 
 .token.string {
-  color: rgb(249,199,60);
+  color: rgb(29,189,159);
 }
 
 .token.number {
@@ -128,11 +179,11 @@ pre.line-numbers {
 }
 
 .token.macro {
-  color: rgb(218,33,33);
+  color: rgb(191,38,38);
 }
 
 .token.flow {
-    color: rgb(179,138,79);
+    color: rgb(230,70,70);
 }
 
 .token.constant {
@@ -149,6 +200,54 @@ pre.line-numbers {
 }
 
 .token.punctuation {
+  color: rgb(179,138,79);
+  font-weight: bold;
+}
+
+/* Ensure tokens in inline code get proper colors */
+:not(pre) > code .token.keyword {
+    color: rgb(86,194,130);
+}
+
+:not(pre) > code .token.type {
+    color: rgb(136,209,138);
+}
+
+:not(pre) > code .token.comment {
+  color: rgb(127,127,127);
+  font-style: italic;
+}
+
+:not(pre) > code .token.string {
+  color: rgb(29,189,159);
+}
+
+:not(pre) > code .token.number {
+  color: rgb(249,199,60);
+}
+
+:not(pre) > code .token.macro {
+  color: rgb(191,38,38);
+}
+
+:not(pre) > code .token.flow {
+    color: rgb(230,70,70);
+}
+
+:not(pre) > code .token.constant {
+    color: rgb(196,196,196);
+}
+
+:not(pre) > code .token.function {
+    color: rgb(248,248,137);
+}
+
+:not(pre) > code .token.operator {
+  color: rgb(179,138,79);
+  font-weight: bold;
+}
+
+:not(pre) > code .token.punctuation {
   color: rgb(179,138,79);
   font-weight: bold;
 }

@@ -161,6 +161,7 @@ body {
 }
 
 .doc-section h2 {
+    color: var(--accent);
     margin-bottom: var(--gap-sm);
     padding-bottom: var(--gap-xs);
     border-bottom: 1px solid var(--border);
@@ -191,7 +192,7 @@ body {
 .text-sm { font-size: var(--text-sm); }
 .text-muted { color: var(--text-muted); }
 
-
+/* ===== Links styling ===== */
 a {
     color: var(--accent-secondary);
     text-decoration: none;
@@ -201,4 +202,53 @@ a {
 a:hover {
     opacity: 0.9;
     text-decoration: underline;
+}
+
+
+/* Table Container */
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Tables */
+.simple-table {
+    width: 100%;
+    min-width: 600px; /* Minimum width before scrolling */
+    border-collapse: collapse;
+}
+
+.simple-table th, 
+.simple-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.simple-table th {
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(0,0,0,0.1);
+}
+
+.simple-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+.doc-section-gap {
+    margin-bottom: 3rem;
+}
+
+.doc-section-gap h2 {
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.inline-list {
+    margin: 1em 2em 1em;
 }
