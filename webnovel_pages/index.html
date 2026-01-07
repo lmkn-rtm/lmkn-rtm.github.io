@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- THEME FLASH FIX - This runs immediately before anything renders -->
+    <script>
+        (function() {
+            // Check localStorage first
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                return;
+            }
+            
+            // Fall back to system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека Фанфиков</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Библиотека Фанфиков</span>
+            </a>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn btn-secondary">
+                    <span id="theme-icon">Тёмная</span>
+                    <span class="sr-only">Сменить тему</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1 class="hero-title">Мои фанфики</h1>
+            <p class="hero-subtitle">Личный сборник фанфиков</p>
+        </section>
+        
+        <div class="novels-grid">
+            
+            <a href="novels/novel-1767810256334/index.html" class="novel-card">
+                <div class="novel-card-header">
+                    <h2 class="novel-title">Каин и Авель - Начало</h2>
+                    <span class="status ongoing">В процессе</span>
+                </div>
+                <div class="novel-author">Авель</div>
+                <p class="novel-description">Это тестовая работа для проверки вебсайта</p>
+                <div class="novel-meta">
+                    <div class="meta-row">
+                        <span class="meta-item">
+                            <span class="meta-label">Начато:</span>
+                            <span class="meta-value">Jan 7, 2026</span>
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-label">Изменено:</span>
+                            <span class="meta-value">Jan 7, 2026</span>
+                        </span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-item">
+                            <span class="meta-label">Главы:</span>
+                            <span class="meta-value">2</span>
+                        </span>
+                        <span class="meta-item">
+                            <span class="meta-label">Слова:</span>
+                            <span class="meta-value">1 261</span>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

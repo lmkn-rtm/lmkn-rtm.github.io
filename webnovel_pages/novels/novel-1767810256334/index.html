@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- THEME FLASH FIX - This runs immediately before anything renders -->
+    <script>
+        (function() {
+            // Check localStorage first
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                return;
+            }
+            
+            // Fall back to system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каин и Авель - Начало - Главы</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="../../script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../../index.html" class="logo">
+                <span class="logo-text">← Библиотека</span>
+            </a>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn btn-secondary">
+                    <span id="theme-icon">Тёмная</span>
+                    <span class="sr-only">Сменить тему</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1 class="hero-title">Каин и Авель - Начало</h1>
+            <p class="hero-subtitle">Авель • Это тестовая работа для проверки вебсайта</p>
+            <div class="novel-meta-large">
+                <span class="status ongoing">В процессе</span>
+                <span>Начато: 07.01.2026 • Изменено: 07.01.2026</span>
+            </div>
+        </section>
+        
+        <section class="chapters-section">
+            <h2>Главы (2)</h2>
+            <div class="chapters-list">
+                
+                <a href="chapter-1767816485171.html" class="chapter-item">
+                    <span class="chapter-number">Глава 1</span>
+                    <span class="chapter-title">Тестовая</span>
+                    <span class="chapter-date">07.01.2026</span>
+                </a>
+            
+                <a href="chapter-1767816526532.html" class="chapter-item">
+                    <span class="chapter-number">Глава 2</span>
+                    <span class="chapter-title">Больлше тестов</span>
+                    <span class="chapter-date">07.01.2026</span>
+                </a>
+            
+            </div>
+        </section>
+    </main>
+</body>
+</html>

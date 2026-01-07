@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- THEME FLASH FIX - This runs immediately before anything renders -->
+    <script>
+        (function() {
+            // Check localStorage first
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                return;
+            }
+            
+            // Fall back to system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактор фанфиков</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .author-main {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-buttons .btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .author-novels {
+            margin-top: 3rem;
+        }
+        
+        .author-novel-item {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .novel-info {
+            flex: 1;
+        }
+        
+        .novel-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-secondary);
+        }
+        
+        .project-status {
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .project-status.loaded {
+            border-color: var(--accent-color);
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <span class="logo-text">← Читатель</span>
+            </a>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn btn-secondary">
+                    <span id="theme-icon">Тёмная</span>
+                    <span class="sr-only">Сменить тему</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="author-main">
+            <section class="hero">
+                <h1 class="hero-title">Редактор автора</h1>
+                <p class="hero-subtitle">Пишите и управляйте фанфиками</p>
+            </section>
+
+            <div id="project-status" class="project-status">
+                Ничего нет. Загрузите или создайте новый проект.
+            </div>
+
+            <div class="action-buttons">
+                <button id="new-novel" class="btn btn-primary">Новый</button>
+                <button id="load-project" class="btn btn-secondary">Загрузить</button>
+                <button id="export-project" class="btn btn-secondary" disabled>Экспорт</button>
+            </div>
+
+            <div id="author-novels" class="author-novels">
+                <div class="empty-state">
+                    <h2>Фанфиков нет</h2>
+                    <p>Загрузите или создайте новый проект чтобы начать.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="author.js"></script>
+</body>
+</html>

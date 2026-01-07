@@ -1,0 +1,15 @@
+{
+  "novels": [
+    {
+      "id": "novel-1767810256334",
+      "title": "Каин и Авель - Начало",
+      "author": "Авель",
+      "description": "Это тестовая работа для проверки вебсайта",
+      "started": "2026-01-07",
+      "lastEdited": "2026-01-07",
+      "status": "ongoing",
+      "chaptersCount": 2,
+      "wordCount": 1261
+    }
+  ]
+}

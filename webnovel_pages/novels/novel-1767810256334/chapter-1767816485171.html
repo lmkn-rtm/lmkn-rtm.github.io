@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- THEME FLASH FIX - This runs immediately before anything renders -->
+    <script>
+        (function() {
+            // Check localStorage first
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                return;
+            }
+            
+            // Fall back to system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовая - Каин и Авель - Начало</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="../../script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="breadcrumb">
+                <a href="../../index.html" class="breadcrumb-item">Библиотека</a>
+                <span class="breadcrumb-divider">/</span>
+                <a href="index.html" class="breadcrumb-item">Каин и Авель - Начало</a>
+                <span class="breadcrumb-divider">/</span>
+                <span class="breadcrumb-item current">Тестовая</span>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn btn-secondary">
+                    <span id="theme-icon">Тёмная</span>
+                    <span class="sr-only">Сменить тему</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container chapter-reading">  <!-- Added chapter-reading class -->
+        <article class="chapter-content">
+            <header class="chapter-header">
+                <nav class="chapter-nav top">
+                    <a href="#" class="btn btn-secondary disabled" disabled>← Назад</a>
+                    <div class="nav-spacer"></div>
+                    <a href="index.html" class="btn btn-secondary">Содержание</a>
+                    <div class="nav-spacer"></div>
+                    <a href="chapter-1767816526532.html" class="btn btn-secondary">Вперед →</a>
+                </nav>
+                
+                <h1 class="chapter-title">Тестовая</h1>
+                <div class="chapter-meta">
+                    <span>Каин и Авель - Начало</span>
+                    <span>•</span>
+                    <span>461 слов</span>
+                    <span>•</span>
+                    <span>07.01.2026</span>
+                </div>
+            </header>
+            
+            <div class="chapter-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel nibh scelerisque, posuere erat vel, dictum turpis. Fusce mauris felis, vestibulum id commodo quis, consectetur sit amet eros. Aliquam in facilisis diam. In aliquam est nisl, vel lacinia massa pretium ac. Vivamus porta rhoncus mauris, quis suscipit erat semper eu. Nam tincidunt venenatis sollicitudin. Ut malesuada, orci sed ultrices tincidunt, nunc lacus accumsan augue, ut cursus erat dui sit amet ligula. Pellentesque elit nibh, tincidunt in viverra rutrum, pharetra a neque. Integer viverra nisi felis. Nulla egestas rhoncus ultricies. Suspendisse gravida commodo ex nec viverra. Curabitur varius non urna nec lacinia. Ut eu felis scelerisque, ullamcorper arcu nec, tempor ante. Pellentesque nec sapien id justo euismod consequat id sed mauris.</p>
+<p>Aenean id scelerisque ipsum. Morbi at egestas sem. Sed in ultricies purus. Nunc at dictum velit. Vivamus ut tempor felis. Donec id sem a nisl interdum auctor. Nunc posuere dui orci, et pellentesque augue ultricies eu. Donec scelerisque, ante id tristique placerat, lorem eros viverra lorem, non consectetur diam augue a quam. Donec et mauris dui. In feugiat velit at nisi pulvinar fermentum. Maecenas eget metus sed velit laoreet congue. Suspendisse et mauris ut risus suscipit accumsan. Quisque ut metus egestas ipsum malesuada vehicula ac quis massa.</p>
+<p>Aliquam condimentum ut leo eu faucibus. Donec placerat, quam a congue consectetur, ligula ligula ullamcorper eros, at accumsan mauris odio vel mi. Proin dictum finibus faucibus. Donec posuere justo ut dui luctus, tristique tristique est ornare. Nunc nec accumsan sem. Quisque rhoncus cursus libero vitae gravida. Nullam ultricies hendrerit auctor. Donec id suscipit orci. Pellentesque sollicitudin tortor non risus sagittis vulputate. Maecenas eu scelerisque nulla. Mauris sit amet purus nec augue lobortis dapibus vel a felis. Nulla tristique euismod nunc sit amet efficitur.</p>
+<p>Vivamus et egestas risus. Nulla ac odio libero. Proin eu vulputate velit, id efficitur eros. Quisque id dolor elit. Morbi dignissim vulputate molestie. Sed aliquam id ligula a eleifend. Aliquam euismod vestibulum massa blandit volutpat. Integer scelerisque bibendum imperdiet. Aenean non scelerisque ipsum. Phasellus interdum accumsan mauris, in rutrum lorem pulvinar a. Aenean eget consequat diam, eget placerat elit. Nam pretium varius posuere. Praesent nec tincidunt libero.</p>
+<p>Nunc tincidunt neque eget nisl molestie gravida nec non ipsum. Etiam eget congue metus. In scelerisque dignissim turpis, in hendrerit diam tristique ut. Donec vestibulum diam erat, ut vulputate ante pellentesque vitae. Nulla vel porttitor neque, id ultrices tellus. In est enim, porttitor in accumsan ut, consectetur non lectus. Integer non pretium nulla. Vivamus eu venenatis libero. Quisque euismod fringilla varius. Donec neque eros, rhoncus non placerat sed, feugiat hendrerit nisi. Praesent luctus lorem vel est placerat, a egestas orci hendrerit. Nulla purus dolor, consequat eu pulvinar at, hendrerit vitae felis. Mauris consectetur condimentum massa. Suspendisse potenti. Nulla non dui et quam egestas posuere.</p>
+            </div>
+            
+            <footer class="chapter-footer">
+                <nav class="chapter-nav bottom">
+                    <a href="#" class="btn btn-secondary disabled" disabled>← Назад</a>
+                    <div class="nav-spacer"></div>
+                    <a href="index.html" class="btn btn-secondary">Содержание</a>
+                    <div class="nav-spacer"></div>
+                    <a href="chapter-1767816526532.html" class="btn btn-secondary">Вперед →</a>
+                </nav>
+            </footer>
+        </article>
+    </main>
+</body>
+</html>

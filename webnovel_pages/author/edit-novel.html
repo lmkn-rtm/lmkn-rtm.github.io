@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- THEME FLASH FIX - This runs immediately before anything renders -->
+    <script>
+        (function() {
+            // Check localStorage first
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                return;
+            }
+            
+            // Fall back to system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактировать фанфик</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .edit-novel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .novel-form {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 0;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .save-button-container {
+            grid-column: 1 / -1;
+            text-align: right;
+        }
+        
+        .chapters-list {
+            margin-top: 2rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .chapters-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .chapter-info {
+            flex: 1;
+        }
+        
+        .chapter-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .move-buttons {
+            display: flex;
+            gap: 0.25rem;
+        }
+        
+        .move-up, .move-down {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            border: 1px dashed var(--border-color);
+            border-radius: 6px;
+            background-color: var(--bg-primary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-text">← Назад</span>
+            </a>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn btn-secondary">
+                    <span id="theme-icon">Тёмная</span>
+                    <span class="sr-only">Сменить тему</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="edit-novel-container">
+            <section class="hero">
+                <h1 class="hero-title">Редактировать фанфик</h1>
+            </section>
+
+            <form id="novel-form" class="novel-form">
+                <div class="form-group">
+                    <label for="novel-title">Название</label>
+                    <input type="text" id="novel-title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="novel-author">Автор</label>
+                    <input type="text" id="novel-author" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="novel-description">Описание</label>
+                    <textarea id="novel-description"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="novel-status">Статус</label>
+                    <select id="novel-status">
+                        <option value="ongoing">Выпускается</option>
+                        <option value="finished">Завершен</option>
+                        <option value="abandoned">Заброшен</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="novel-started">Дата начала</label>
+                    <input type="date" id="novel-started" required>
+                </div>
+                
+                <div class="save-button-container">
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+
+            <section class="chapters-section">
+                <div class="chapters-header">
+                    <h2>Главы</h2>
+                    <button id="new-chapter" class="btn btn-secondary">Новая глава</button>
+                </div>
+                <div id="chapters-list" class="chapters-list">
+                    <!-- Chapters will be loaded here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="edit-novel.js"></script>
+</body>
+</html>

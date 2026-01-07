@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- THEME FLASH FIX - This runs immediately before anything renders -->
+    <script>
+        (function() {
+            // Check localStorage first
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                return;
+            }
+            
+            // Fall back to system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Chapter - Author Tool</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        .editor-container {
+            height: calc(100vh - 120px);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .chapter-title-input {
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-title-input input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+        
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+        
+        .editor-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+        
+        .toolbar-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .toolbar-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-right: 0.25rem;
+        }
+        
+        .toolbar-btn {
+            padding: 0.5rem 0.75rem;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        
+        .toolbar-btn:hover {
+            background-color: var(--border-color);
+        }
+        
+        .toolbar-btn.template-btn {
+            font-style: italic;
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .editor-content {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            position: relative;
+            width: 100%;
+            gap: 1rem;
+        }
+        
+        .editor-pane {
+            flex: 0 0 50%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .pane-header {
+            padding: 0.5rem 1rem;
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .editor-textarea {
+            flex: 1;
+            padding: 1.5rem;
+            border: none;
+            resize: none;
+            font-family: 'Noto Serif', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            width: 100%;
+            outline: none;
+        }
+        
+        .preview-pane {
+            flex: 0 0 50%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .preview-content {
+            flex: 1;
+            overflow-y: auto;
+            background-color: var(--bg-primary);
+            width: 100%;
+        }
+        
+        .editor-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .word-count {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .markdown-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+        
+        .preview-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--text-muted);
+        }
+        
+        .chapter-preview {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="edit-novel.html" class="logo">
+                <span class="logo-text">← Назад</span>
+            </a>
+            <div class="header-actions">
+                <button id="save-chapter" class="btn btn-primary">Сохранить</button>
+                <button id="theme-toggle" class="btn btn-secondary">
+                    <span id="theme-icon">Тёмная</span>
+                    <span class="sr-only">Сменить тему</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="editor-container">
+            <div class="chapter-title-input">
+                <input type="text" id="chapter-title-input" placeholder="Chapter Title" />
+            </div>
+            
+            <div class="editor-toolbar">
+                <div class="toolbar-section">
+                    <span class="toolbar-label">Формат:</span>
+                    <button type="button" class="toolbar-btn" data-action="bold" title="Bold">Жирный</button>
+                    <button type="button" class="toolbar-btn" data-action="italic" title="Italic">Курсив</button>
+                </div>
+                
+                <div class="toolbar-section">
+                    <span class="toolbar-label">Символы:</span>
+                    <button type="button" class="toolbar-btn" data-action="em-dash" title="Em Dash">—</button>
+                    <button type="button" class="toolbar-btn" data-action="en-dash" title="En Dash">–</button>
+                    <button type="button" class="toolbar-btn" data-action="russian-quote" title="Russian Quotes">«»</button>
+                    <button type="button" class="toolbar-btn" data-action="asterisks" title="Asterisks">***</button>
+                </div>
+                
+                <div class="toolbar-section">
+                    <span class="toolbar-label">Шаблоны:</span>
+                    <button type="button" class="toolbar-btn template-btn" data-action="speech1">А: «П»</button>
+                    <button type="button" class="toolbar-btn template-btn" data-action="speech2">«П», — а.</button>
+                    <button type="button" class="toolbar-btn template-btn" data-action="speech3">А: «П!», — а.</button>
+                    <button type="button" class="toolbar-btn template-btn" data-action="speech4">«П, — а, — п».</button>
+                    <button type="button" class="toolbar-btn template-btn" data-action="speech5">— П.</button>
+                    <button type="button" class="toolbar-btn template-btn" data-action="speech6">— П, а.</button>
+                    <button type="button" class="toolbar-btn template-btn" data-action="speech7">— П, — а, — п.</button>
+                </div>
+            </div>
+
+            <div class="editor-content">
+                <div class="editor-pane">
+                    <div class="pane-header">Текст (Markdown)</div>
+                    <textarea id="markdown-editor" class="editor-textarea" placeholder="Превью появится здесь..."></textarea>
+                </div>
+                
+                <div class="preview-pane">
+                    <div class="pane-header">Превью</div>
+                    <div id="markdown-preview" class="preview-content">
+                        <div class="preview-placeholder">
+                            <div>Превью появится здесь...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editor-footer">
+                <div class="word-count">
+                    <span id="word-count">0 words</span>
+                    <span id="char-count">0 characters</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="edit-chapter.js"></script>
+</body>
+</html>
