@@ -157,7 +157,7 @@ class ChapterEditor {
                 cursorOffset = 9;
                 break;
             case 'speech3':
-                newText = 'А: «П!», — а.';
+                newText = 'А: «П!» — а.';
                 cursorOffset = 12;
                 break;
             case 'speech4':
@@ -165,11 +165,11 @@ class ChapterEditor {
                 cursorOffset = 14;
                 break;
             case 'speech5':
-                newText = '— П.';
+                newText = '— П, — а.';
                 cursorOffset = 4;
                 break;
             case 'speech6':
-                newText = '— П, а.';
+                newText = '— П? — а.';
                 cursorOffset = 7;
                 break;
             case 'speech7':
